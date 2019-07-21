@@ -24,7 +24,7 @@ class GamePlayViewController: UIViewController {
     //MARK: Variables
     var temp: Int = 0
     var countdownTimer: Timer!
-    var totalTime = 9
+    var totalTime = 44
     var storetime: Double?
     var audioPlayer: AVAudioPlayer?
     //var timer = Timer()
