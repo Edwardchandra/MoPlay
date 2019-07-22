@@ -22,6 +22,12 @@
 		B657A54422E2C15C00E264A2 /* completeParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = B657A54322E2C15C00E264A2 /* completeParticle.sks */; };
 		B657A54622E2C2AB00E264A2 /* ActivityCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A54522E2C2AB00E264A2 /* ActivityCompleteViewController.swift */; };
 		B657A54C22E3CFE900E264A2 /* gamesound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B657A54B22E3CFE900E264A2 /* gamesound.mp3 */; };
+		B657A54E22E4F02300E264A2 /* SecondInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A54D22E4F02300E264A2 /* SecondInstructionViewController.swift */; };
+		B657A55022E4F2E000E264A2 /* SecondInstruction.xib in Resources */ = {isa = PBXBuildFile; fileRef = B657A54F22E4F2E000E264A2 /* SecondInstruction.xib */; };
+		B657A55222E4F37400E264A2 /* SecondInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A55122E4F37400E264A2 /* SecondInstruction.swift */; };
+		B657A55422E51C4E00E264A2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A55322E51C4E00E264A2 /* HistoryViewController.swift */; };
+		B657A55622E51F1900E264A2 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657A55522E51F1900E264A2 /* HistoryCollectionViewCell.swift */; };
+		B65A13E322E56BD9003E6520 /* gamesound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B65A13E222E56BD9003E6520 /* gamesound2.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		B657A54322E2C15C00E264A2 /* completeParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = completeParticle.sks; sourceTree = "<group>"; };
 		B657A54522E2C2AB00E264A2 /* ActivityCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCompleteViewController.swift; sourceTree = "<group>"; };
 		B657A54B22E3CFE900E264A2 /* gamesound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gamesound.mp3; path = ../../../../../Downloads/gamesound.mp3; sourceTree = "<group>"; };
+		B657A54D22E4F02300E264A2 /* SecondInstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInstructionViewController.swift; sourceTree = "<group>"; };
+		B657A54F22E4F2E000E264A2 /* SecondInstruction.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondInstruction.xib; sourceTree = "<group>"; };
+		B657A55122E4F37400E264A2 /* SecondInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInstruction.swift; sourceTree = "<group>"; };
+		B657A55322E51C4E00E264A2 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		B657A55522E51F1900E264A2 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		B65A13E222E56BD9003E6520 /* gamesound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = gamesound2.mp3; path = ../../../../../Downloads/gamesound2.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,8 @@
 		B63E81F422DF79E400C755E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B657A53C22E1A92B00E264A2 /* Instruction.xib */,
+				B657A54F22E4F2E000E264A2 /* SecondInstruction.xib */,
 				B63E81E122DF6CC800C755E6 /* Main.storyboard */,
 				B657A53B22E1A90000E264A2 /* Collection View */,
 				B657A54022E1A95C00E264A2 /* Instruction */,
@@ -111,9 +125,10 @@
 				B63E81DF22DF6CC800C755E6 /* ViewController.swift */,
 				B657A53722DF8E3C00E264A2 /* GamePlayViewController.swift */,
 				B657A53922E074F500E264A2 /* SecondGamePlayViewController.swift */,
-				B657A53C22E1A92B00E264A2 /* Instruction.xib */,
 				B657A54122E1AA8900E264A2 /* InstructionViewController.swift */,
 				B657A54522E2C2AB00E264A2 /* ActivityCompleteViewController.swift */,
+				B657A54D22E4F02300E264A2 /* SecondInstructionViewController.swift */,
+				B657A55322E51C4E00E264A2 /* HistoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				B657A53522DF841800E264A2 /* CollectionViewCell.swift */,
+				B657A55522E51F1900E264A2 /* HistoryCollectionViewCell.swift */,
 			);
 			path = "Collection View";
 			sourceTree = "<group>";
@@ -130,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B657A53E22E1A94E00E264A2 /* Instruction.swift */,
+				B657A55122E4F37400E264A2 /* SecondInstruction.swift */,
 			);
 			path = Instruction;
 			sourceTree = "<group>";
@@ -137,6 +154,7 @@
 		B657A54822E3CB2000E264A2 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				B65A13E222E56BD9003E6520 /* gamesound2.mp3 */,
 				B657A54B22E3CFE900E264A2 /* gamesound.mp3 */,
 			);
 			path = Audio;
@@ -201,10 +219,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B657A54422E2C15C00E264A2 /* completeParticle.sks in Resources */,
+				B65A13E322E56BD9003E6520 /* gamesound2.mp3 in Resources */,
 				B63E81EB22DF6CC900C755E6 /* LaunchScreen.storyboard in Resources */,
 				B657A54C22E3CFE900E264A2 /* gamesound.mp3 in Resources */,
 				B63E81E822DF6CC900C755E6 /* Assets.xcassets in Resources */,
 				B657A53D22E1A92B00E264A2 /* Instruction.xib in Resources */,
+				B657A55022E4F2E000E264A2 /* SecondInstruction.xib in Resources */,
 				B63E81E322DF6CC800C755E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +239,12 @@
 				B63E81E622DF6CC800C755E6 /* MoPlay.xcdatamodeld in Sources */,
 				B657A53822DF8E3C00E264A2 /* GamePlayViewController.swift in Sources */,
 				B657A53A22E074F500E264A2 /* SecondGamePlayViewController.swift in Sources */,
+				B657A55622E51F1900E264A2 /* HistoryCollectionViewCell.swift in Sources */,
+				B657A55422E51C4E00E264A2 /* HistoryViewController.swift in Sources */,
+				B657A55222E4F37400E264A2 /* SecondInstruction.swift in Sources */,
 				B657A54222E1AA8900E264A2 /* InstructionViewController.swift in Sources */,
 				B657A54622E2C2AB00E264A2 /* ActivityCompleteViewController.swift in Sources */,
+				B657A54E22E4F02300E264A2 /* SecondInstructionViewController.swift in Sources */,
 				B657A53F22E1A94E00E264A2 /* Instruction.swift in Sources */,
 				B63E81E022DF6CC800C755E6 /* ViewController.swift in Sources */,
 				B657A53622DF841800E264A2 /* CollectionViewCell.swift in Sources */,

@@ -20,6 +20,10 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var scoreView: UIImageView!
     @IBOutlet weak var scoreTextField: UITextField!
     @IBOutlet weak var scoreCheck: UIImageView!
+    @IBOutlet weak var resumeButton: UIButton!
+    @IBOutlet weak var restartButton: UIButton!
+    @IBOutlet weak var quitButton: UIButton!
+    @IBOutlet weak var pausePopUpImageView: UIImageView!
     
     //MARK: Variables
     var temp: Int = 0
@@ -102,9 +106,12 @@ class GamePlayViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let scoreDestination = segue.destination as? ActivityCompleteViewController
-        
-        scoreDestination!.score = Int(scoreTextField.text!)
+        if segue.identifier == "segueToScore"{
+            let scoreDestination = segue.destination as? ActivityCompleteViewController
+            
+            scoreDestination!.score = Int(scoreTextField.text!)
+            
+        }
         
     }
     
@@ -117,16 +124,19 @@ class GamePlayViewController: UIViewController {
     
     @objc func pauseAction(){
         
-        if temp==1{
-            startTimer()
-            countdownTimer.fire()
-            temp=0
-            print(temp)
-        }else if temp==0{
+        if temp==0{
             countdownTimer.invalidate()
             storetime = Double(timeLabel.text!)!
+            audioPlayer?.pause()
             temp=1
             print(temp)
+            UIView.animate(withDuration: 1, animations: {
+                self.pausePopUpImageView.alpha = 1
+                self.resumeButton.alpha = 1
+                self.restartButton.alpha = 1
+                self.quitButton.alpha = 1
+            }, completion: nil)
+            pauseButton.isUserInteractionEnabled = false
         }
     }
     
@@ -134,9 +144,54 @@ class GamePlayViewController: UIViewController {
         print("paused")
     }
     
+    //MARK: Resume Game
+    @IBAction func resumeAction(_ sender: Any) {
+        if temp==1{
+            startTimer()
+            countdownTimer.fire()
+            audioPlayer?.play()
+            temp=0
+            print(temp)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.pausePopUpImageView.alpha = 0
+                self.resumeButton.alpha = 0
+                self.restartButton.alpha = 0
+                self.quitButton.alpha = 0
+            }, completion: nil)
+            pauseButton.isUserInteractionEnabled = true
+        }
+    }
+    
+    //MARK: Restart Game
+    @IBAction func restartAction(_ sender: Any) {
+        if temp==1{
+            pausePopUpImageView.alpha = 0
+            resumeButton.alpha = 0
+            restartButton.alpha = 0
+            quitButton.alpha = 0
+            audioPlayer?.stop()
+            audioPlayer?.currentTime = 0
+            totalTime = 44
+            audioPlayer?.play()
+            timeLabel.text = "45"
+            startTimer()
+            pauseButton.isUserInteractionEnabled = true
+            temp=0
+        }
+    }
+    
+    //MARK: Quit Game
+    @IBAction func quitAction(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+    }
+    
+    //MARK: Customize Components
     func customizeComponent(){
         pauseButton.layer.cornerRadius = 25
         timeView.layer.cornerRadius = 50
+        resumeButton.layer.cornerRadius = 17
+        restartButton.layer.cornerRadius = 17
+        quitButton.layer.cornerRadius = 17
     }
     
     //MARK: Timer

@@ -12,6 +12,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     //MARK: IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var historyButton: UIImageView!
     
     //MARK: Variables
     var imageArray = [UIImage(named: "menu1"), UIImage(named: "menu2"), UIImage(named: "menu3")]
@@ -23,8 +24,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        historyGesture()
     }
     
+    //MARK: History Button
+    func historyGesture(){
+        let historyGesture = UITapGestureRecognizer(target: self, action: #selector(self.historyAction))
+        historyButton.addGestureRecognizer(historyGesture)
+    }
+    
+    @objc func historyAction(){
+        performSegue(withIdentifier: "segueToHistory", sender: self)
+    }
+    
+    
+    //MARK: Collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return imageArray.count
@@ -43,7 +57,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "segueToInstruction", sender: self)
+        
+        if indexPath.row == 0{
+            print("1")
+        }else if indexPath.row == 1{
+            performSegue(withIdentifier: "segueToSecondInstruction", sender: self)
+        }else if indexPath.row == 2{
+            performSegue(withIdentifier: "segueToInstruction", sender: self)
+        }
         
     }
     

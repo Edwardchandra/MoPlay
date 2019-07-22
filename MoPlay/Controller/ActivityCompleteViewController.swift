@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import CoreData
 
 class ActivityCompleteViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class ActivityCompleteViewController: UIViewController {
     @IBOutlet weak var completeButton: UIImageView!
     
     var score: Int?
+    var activities: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,35 @@ class ActivityCompleteViewController: UIViewController {
     }
     
     @objc func completeAction(){
+        save(name: "Jumping", score: score!)
         performSegue(withIdentifier: "unwindSegueToHome", sender: self)
+    }
+    
+    func save(name: String, score: Int){
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        let entity =
+            NSEntityDescription.entity(forEntityName: "Activities",
+                                       in: managedContext)!
+        
+        let names = NSManagedObject(entity: entity,
+                                    insertInto: managedContext)
+        names.setValue(name, forKeyPath: "name")
+        names.setValue(score, forKeyPath: "score")
+        
+        do {
+            try managedContext.save()
+            activities.append(names)
+            print("saved")
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
     
     func scorePoint(){
