@@ -95,7 +95,6 @@
 				B63E81E922DF6CC900C755E6 /* LaunchScreen.storyboard */,
 				B63E81EC22DF6CC900C755E6 /* Info.plist */,
 				B63E81E422DF6CC800C755E6 /* MoPlay.xcdatamodeld */,
-				B657A54322E2C15C00E264A2 /* completeParticle.sks */,
 			);
 			path = MoPlay;
 			sourceTree = "<group>";
@@ -103,9 +102,9 @@
 		B63E81F422DF79E400C755E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B657A53C22E1A92B00E264A2 /* Instruction.xib */,
-				B657A54F22E4F2E000E264A2 /* SecondInstruction.xib */,
-				B63E81E122DF6CC800C755E6 /* Main.storyboard */,
+				B65A13ED22E5A213003E6520 /* Particle Emitter */,
+				B65A13E722E5A1BD003E6520 /* Storyboard */,
+				B65A13E622E5A1B3003E6520 /* Xib */,
 				B657A53B22E1A90000E264A2 /* Collection View */,
 				B657A54022E1A95C00E264A2 /* Instruction */,
 			);
@@ -122,13 +121,11 @@
 		B63E81F622DF7A0300C755E6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B63E81DF22DF6CC800C755E6 /* ViewController.swift */,
-				B657A53722DF8E3C00E264A2 /* GamePlayViewController.swift */,
-				B657A53922E074F500E264A2 /* SecondGamePlayViewController.swift */,
-				B657A54122E1AA8900E264A2 /* InstructionViewController.swift */,
-				B657A54522E2C2AB00E264A2 /* ActivityCompleteViewController.swift */,
-				B657A54D22E4F02300E264A2 /* SecondInstructionViewController.swift */,
-				B657A55322E51C4E00E264A2 /* HistoryViewController.swift */,
+				B65A13EC22E5A201003E6520 /* History */,
+				B65A13EB22E5A1F9003E6520 /* Complete */,
+				B65A13EA22E5A1F0003E6520 /* Main Screen */,
+				B65A13E922E5A1E4003E6520 /* Instruction */,
+				B65A13E822E5A1D0003E6520 /* Gameplay */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -158,6 +155,73 @@
 				B657A54B22E3CFE900E264A2 /* gamesound.mp3 */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		B65A13E622E5A1B3003E6520 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				B657A53C22E1A92B00E264A2 /* Instruction.xib */,
+				B657A54F22E4F2E000E264A2 /* SecondInstruction.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		B65A13E722E5A1BD003E6520 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B63E81E122DF6CC800C755E6 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B65A13E822E5A1D0003E6520 /* Gameplay */ = {
+			isa = PBXGroup;
+			children = (
+				B657A53722DF8E3C00E264A2 /* GamePlayViewController.swift */,
+				B657A53922E074F500E264A2 /* SecondGamePlayViewController.swift */,
+			);
+			path = Gameplay;
+			sourceTree = "<group>";
+		};
+		B65A13E922E5A1E4003E6520 /* Instruction */ = {
+			isa = PBXGroup;
+			children = (
+				B657A54122E1AA8900E264A2 /* InstructionViewController.swift */,
+				B657A54D22E4F02300E264A2 /* SecondInstructionViewController.swift */,
+			);
+			path = Instruction;
+			sourceTree = "<group>";
+		};
+		B65A13EA22E5A1F0003E6520 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B63E81DF22DF6CC800C755E6 /* ViewController.swift */,
+			);
+			path = "Main Screen";
+			sourceTree = "<group>";
+		};
+		B65A13EB22E5A1F9003E6520 /* Complete */ = {
+			isa = PBXGroup;
+			children = (
+				B657A54522E2C2AB00E264A2 /* ActivityCompleteViewController.swift */,
+			);
+			path = Complete;
+			sourceTree = "<group>";
+		};
+		B65A13EC22E5A201003E6520 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				B657A55322E51C4E00E264A2 /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		B65A13ED22E5A213003E6520 /* Particle Emitter */ = {
+			isa = PBXGroup;
+			children = (
+				B657A54322E2C15C00E264A2 /* completeParticle.sks */,
+			);
+			path = "Particle Emitter";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -31,14 +31,15 @@ class GamePlayViewController: UIViewController {
     var totalTime = 44
     var storetime: Double?
     var audioPlayer: AVAudioPlayer?
-    //var timer = Timer()
+    var timer = Timer()
     
-    //var abort = true
     
     //MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.hideKeyboardWhenTappedAround() 
+        
         customizeComponent()
         
         emitNemo()
@@ -54,32 +55,21 @@ class GamePlayViewController: UIViewController {
         
     }
     
-    /*
     func scheduledTimerWithTimeInterval(){
         
-        if totalTime >= 3{
-            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: abort)
+        timer = Timer.scheduledTimer(timeInterval: 1.7, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
 
-        }else{
-            timer.invalidate()
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                
-                self.abort = false
-            }
-        }
+        
         
     }
     
     @objc func updateCounting(){
-        if abort == true{
             self.jumpLabel.alpha = 1
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.jumpLabel.alpha = 0
             }
-        }
     }
-    */
     
     func addAudio(){
         audioPlayer = AVAudioPlayer()
@@ -281,4 +271,16 @@ class GamePlayViewController: UIViewController {
     }
     
     
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

@@ -223,7 +223,7 @@ class SecondGamePlayViewController: UIViewController, CLLocationManagerDelegate 
         //let RPM = headingArray[
         
         UIImageView.animate(withDuration: 0.5){
-            self.rabbitImage.transform = CGAffineTransform(rotationAngle: -CGFloat(angle))
+            self.rabbitImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         }
         
         
